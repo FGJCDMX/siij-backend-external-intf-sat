@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: reyes
+Build-Jdk: 17
+Implementation-Title: firmaSAT
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.org.sat
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/firmaSAT
+Created-By: Maven Integration for Eclipse
+
