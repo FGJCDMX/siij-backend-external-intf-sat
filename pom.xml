@@ -12,6 +12,7 @@
 	<groupId>com.org.sat</groupId>
 	<artifactId>firmaSAT</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>firmaSAT</name>
 	<description>API de Firma Electronica del SAT</description>
 	
@@ -58,6 +59,17 @@
 		    <groupId>com.mysql</groupId>
 		    <artifactId>mysql-connector-j</artifactId>
 		    <version>8.0.32</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>3.8.1</version>
+		</dependency>
+				
+		<dependency>
+		    <groupId>au.com.dius</groupId>
+		    <artifactId>pact-jvm-provider-junit5-spring</artifactId>
+		    <version>4.0.10</version>
 		</dependency>
 		
 	</dependencies>
