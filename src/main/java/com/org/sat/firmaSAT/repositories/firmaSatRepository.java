@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.org.sat.firmaSAT.models.firmaSatModel;
 
 @Repository
-public interface  firmaSatRepository extends CrudRepository<firmaSatModel, Long> {
+public interface  firmaSatRepository { //extends CrudRepository<firmaSatModel, Long> {
 	
 }

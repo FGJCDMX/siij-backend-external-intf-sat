@@ -1,26 +1,34 @@
 package com.org.sat.firmaSAT.services;
 
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
+import com.org.sat.firmaSAT.dtos.firmaSatAutenticarDTO;
+import com.org.sat.firmaSAT.dtos.firmaSatModelDTO;
+import com.org.sat.firmaSAT.dtos.firmaSatTokenDTO;
+import com.org.sat.firmaSAT.models.validaFirmaSatResponse;
 
-import java.util.ArrayList;
+@FeignClient(name = "firmaSatServiceClient", url = "${efirma.url}")
+public interface firmaSatService {
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.org.sat.firmaSAT.repositories.firmaSatRepository;
-import com.org.sat.firmaSAT.models.firmaSatModel;
-
-@Service
-public class firmaSatService {
-
-	@Autowired
+	@PostMapping(value = "/autenticar")
+	public firmaSatTokenDTO autenticar(@RequestBody firmaSatAutenticarDTO input);
+	
+	@PostMapping(value = "/eFirma")
+	public validaFirmaSatResponse validarFirma(@RequestHeader("Authorization") String token, @RequestBody firmaSatModelDTO input);
+	
+	/*@Autowired
 	firmaSatRepository firmaSatRepository;
 
-	public ArrayList<firmaSatModel> obtenerFirmaSat(){
-		return (ArrayList<firmaSatModel>) firmaSatRepository.findAll();
+	public ArrayList<firmaSatModelDTO> obtenerFirmaSat(){
+		return (ArrayList<firmaSatModelDTO>) firmaSatRepository.findAll();
 	}
-	public firmaSatModel guardarFirmaSat(firmaSatModel firma) {
+	
+	public firmaSatModelDTO guardarFirmaSat(firmaSatModel firma) {
 	 return firmaSatRepository.save(firma);	
 		
-	}
+	}*/
 	
 }
